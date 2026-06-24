@@ -40,11 +40,11 @@ export default function FeaturedLawyers() {
                 {lawyers.map((lawyer, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-2xl shadow-md hover:shadow-xl transition">
+                        className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                         <img
                             src={lawyer.image}
                             alt={lawyer.name}
-                            className="w-full h-48 object-cover"/>
+                            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"/>
                             <div className="p-5 text-center"/>
 
                             {/* NAME */}
@@ -64,7 +64,7 @@ export default function FeaturedLawyers() {
                         </p>
 
                         {/* BUTTON */}
-                        <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                        <button className="mt-5 w-full bg-blue-600 text-white py-2 rounded-lg transition-all duration-300 hover:bg-blue-600 hover:scale-105">
                             View Profile
                         </button>
 
