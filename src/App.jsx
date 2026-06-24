@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import PrivateRoute from "./routes/PrivateRoute";
 import Hero from "./components/Hero";
 import FeaturedLawyers from "./components/FeaturedLawyers";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
     const { user } = useAuth();
@@ -32,18 +33,14 @@ export default function App() {
                     path="/dashboard"
                     element={
                         <PrivateRoute>
-                            <div className="h-screen flex items-center justify-center">
-                                <h1 className="text-3xl font-bold text-green-600">
-                                    Dashboard Page (Protected)
-                                </h1>
-                            </div>
+                            <Dashboard />
                         </PrivateRoute>
                     }
                 />
-                
+
             </Routes>
-             
-  <FeaturedLawyers />  
+
+            <FeaturedLawyers />
 
             <Footer />
         </>
