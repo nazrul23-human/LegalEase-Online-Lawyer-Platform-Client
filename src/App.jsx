@@ -1,60 +1,47 @@
-// import { Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-// import { useAuth } from "./context/AuthContext";
-// import Login from "./pages/Login";
-// import Register from "./pages/Register";
-// import PrivateRoute from "./routes/PrivateRoute";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { useAuth } from "./context/AuthContext";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import PrivateRoute from "./routes/PrivateRoute";
 import Hero from "./components/Hero";
 
-// export default function App() {
-//     const { user } = useAuth();
+export default function App() {
+  const { user } = useAuth();
 
-//     return (
-//         <>
-//             <Navbar />
+  return (
+    <>
+      <Navbar />
 
-//             <Routes>
-//                 <Route
-//                     path="/"
-//                     element={
-//                         <div className="h-screen flex flex-col items-center justify-center">
+      <Routes>
 
-//                             <h1 className="text-4xl font-bold text-blue-700">
-//                                 LegalEase Working 🚀
-//                             </h1>
+        {/* 🔥 HOME (HERO SECTION) */}
+        <Route path="/" element={<Hero />} />
 
-//                             {/* 🔥 AUTH TEST */}
-//                             <div className="mt-6 text-lg">
-//                                 {user ? (
-//                                     <p className="text-green-600">
-//                                         Logged in as: {user.email}
-//                                     </p>
-//                                 ) : (
-//                                     <p className="text-red-500">
-//                                         No user logged in
-//                                     </p>
-//                                 )}
-//                             </div>
+        {/* 🔥 LOGIN PAGE */}
+        <Route path="/login" element={<Login />} />
 
-//                         </div>
-//                     }
-//                 />
-//                 <Route path="/login" element={<Login />} />
-//                 <Route path="/register" element={<Register />} />
-//                 <Route
-//                     path="/dashboard"
-//                     element={
-//                         <PrivateRoute>
-//                             <h1>Dashboard Page (Protected)</h1>
-//                         </PrivateRoute>
-//                     }
-//                 />
-                  <Route path="/" element={<Hero />}/>
+        {/* 🔥 REGISTER PAGE */}
+        <Route path="/register" element={<Register />} />
 
-//             </Routes>
+        {/* 🔐 PROTECTED DASHBOARD */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <div className="h-screen flex items-center justify-center">
+                <h1 className="text-3xl font-bold text-green-600">
+                  Dashboard Page (Protected) 🚀
+                </h1>
+              </div>
+            </PrivateRoute>
+          }
+        />
 
-//             <Footer />
-//         </>
-//     );
-// }
+      </Routes>
+
+      <Footer />
+    </>
+  );
+}
