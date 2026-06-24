@@ -6,42 +6,46 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./routes/PrivateRoute";
 import Hero from "./components/Hero";
+import FeaturedLawyers from "./components/FeaturedLawyers";
 
 export default function App() {
-  const { user } = useAuth();
+    const { user } = useAuth();
 
-  return (
-    <>
-      <Navbar />
+    return (
+        <>
+            <Navbar />
 
-      <Routes>
+            <Routes>
 
-        {/* 🔥 HOME (HERO SECTION) */}
-        <Route path="/" element={<Hero />} />
+                {/* HOME (HERO SECTION) */}
+                <Route path="/" element={<Hero />} />
 
-        {/* 🔥 LOGIN PAGE */}
-        <Route path="/login" element={<Login />} />
 
-        {/* 🔥 REGISTER PAGE */}
-        <Route path="/register" element={<Register />} />
+                {/* LOGIN PAGE */}
+                <Route path="/login" element={<Login />} />
 
-        {/* 🔐 PROTECTED DASHBOARD */}
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <div className="h-screen flex items-center justify-center">
-                <h1 className="text-3xl font-bold text-green-600">
-                  Dashboard Page (Protected) 🚀
-                </h1>
-              </div>
-            </PrivateRoute>
-          }
-        />
+                {/* REGISTER PAGE */}
+                <Route path="/register" element={<Register />} />
 
-      </Routes>
+                {/* PROTECTED DASHBOARD */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <PrivateRoute>
+                            <div className="h-screen flex items-center justify-center">
+                                <h1 className="text-3xl font-bold text-green-600">
+                                    Dashboard Page (Protected)
+                                </h1>
+                            </div>
+                        </PrivateRoute>
+                    }
+                />
+                
+            </Routes>
+             
+  <FeaturedLawyers />  
 
-      <Footer />
-    </>
-  );
+            <Footer />
+        </>
+    );
 }

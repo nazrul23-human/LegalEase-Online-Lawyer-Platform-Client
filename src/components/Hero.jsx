@@ -6,7 +6,7 @@ export default function Hero() {
 
   return (
     <div
-      className="h-screen w-full relative flex items-center justify-start"
+      className="min-h-screen w-full relative flex items-center justify-start"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
@@ -14,10 +14,10 @@ export default function Hero() {
       }}
     >
 
-      {/* 🔥 DARK OVERLAY */}
+      {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/60 z-0"></div>
 
-      {/* 🔥 CONTENT */}
+      {/* CONTENT */}
       <div className="relative z-10 w-full flex flex-col items-center text-center px-6 text-white">
 
         <h1 className="text-5xl font-bold leading-tight">
