@@ -5,6 +5,7 @@
 // import Login from "./pages/Login";
 // import Register from "./pages/Register";
 // import PrivateRoute from "./routes/PrivateRoute";
+import Hero from "./components/Hero";
 
 // export default function App() {
 //     const { user } = useAuth();
@@ -49,6 +50,8 @@
 //                         </PrivateRoute>
 //                     }
 //                 />
+                  <Route path="/" element={<Hero />}/>
+
 //             </Routes>
 
 //             <Footer />
